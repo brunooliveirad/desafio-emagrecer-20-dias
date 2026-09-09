@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Desafio Emagrecer em 20 Dias</title>
+  <meta name="description" content="Um desafio de 20 dias para criar hábitos mais saudáveis e construir uma rotina sustentável.">
+
+  <!-- Font Awesome para ícones profissionais em SVG -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    :root {
+      --green: #20a464;
+      --dark-green: #087443;
+      --light-green: #eafaf1;
+      --yellow: #ffc928;
+      --dark: #173126;
+      --gray: #66736d;
+      --light: #f7faf8;
+      --white: #ffffff;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid #eee;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--dark-green);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      margin-left: 25px;
+    }
+
+    .nav-btn {
+      background: var(--green);
+      color: white !important;
+      padding: 11px 20px;
+      border-radius: 30px;
+      transition: background 0.2s;
+    }
+
+    .nav-btn:hover {
+      background: var(--dark-green);
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(32,164,100,.18), transparent 30%),
+        linear-gradient(135deg, #f3fff8, #ffffff);
+      padding: 80px 20px 90px;
+    }
+
+    .hero-container {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #dff8ea;
+      color: var(--dark-green);
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 68px);
+      line-height: 1.1;
+      color: var(--dark);
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--green);
+    }
+
+    .hero p {
+      color: var(--gray);
+      font-size: 19px;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--green);
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 17px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(32,164,100,.25);
+      transition: .2s;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      background: var(--dark-green);
+    }
+
+    .small-text {
+      display: block;
+      margin-top: 12px;
+      color: #77827d;
+      font-size: 13px;
+    }
+
+    .hero-card {
+      background: white;
+      border-radius: 25px;
+      padding: 35px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.10);
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-circle {
+      width: 180px;
+      height: 180px;
+      margin: auto;
+      border-radius: 50%;
+      background: linear-gradient(145deg,#d9f7e6,#f5fff9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+      color: var(--green);
+    }
+
+    .hero-card h3 {
+      margin-top: 25px;
+      font-size: 25px;
+      color: var(--dark);
+    }
+
+    .hero-card p {
+      font-size: 15px;
+      margin: 10px auto 0;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 50px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(28px, 5vw, 45px);
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: var(--gray);
+      font-size: 17px;
+    }
+
+    /* PROBLEM */
+
+    .problem {
+      background: #fff;
+    }
+
+    .problem-box {
+      max-width: 850px;
+      margin: auto;
+      background: var(--light);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: left;
+    }
+
+    .problem-list {
+      list-style: none;
+      margin-bottom: 25px;
+    }
+
+    .problem-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 18px;
+      color: #b91c1c;
+      margin-bottom: 12px;
+    }
+
+    .problem-box strong {
+      display: block;
+      text-align: center;
+      font-size: 18px;
+      color: var(--dark);
+    }
+
+    /* BENEFITS */
+
+    .benefits {
+      background: var(--light);
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 20px;
+    }
+
+    .benefit {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid #e8eee9;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .benefit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      background: var(--light-green);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .benefit h3 {
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+
+    .benefit p {
+      color: var(--gray);
+    }
+
+    /* PHASES */
+
+    .phases {
+      background: white;
+    }
+
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+    }
+
+    .phase {
+      border: 1px solid #e3e9e5;
+      border-radius: 18px;
+      padding: 25px;
+      position: relative;
+      overflow: hidden;
+      background: white;
+    }
+
+    .phase-number {
+      font-size: 45px;
+      font-weight: 900;
+      color: #dff5e8;
+      position: absolute;
+      right: 15px;
+      top: 5px;
+    }
+
+    .phase h3 {
+      color: var(--dark-green);
+      margin: 25px 0 10px;
+    }
+
+    .phase p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* BONUS */
+
+    .bonus {
+      background: linear-gradient(135deg,#087443,#20a464);
+      color: white;
+    }
+
+    .bonus-container {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .app-box {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 25px;
+      padding: 45px;
+      text-align: center;
+    }
+
+    .app-icon {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+
+    .bonus h2 {
+      font-size: 38px;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .bonus p {
+      opacity: .9;
+      margin-bottom: 20px;
+    }
+
+    .bonus ul {
+      list-style: none;
+      margin-bottom: 25px;
+    }
+
+    .bonus li {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .bonus .cta {
+      background: white;
+      color: var(--dark-green);
+    }
+
+    .bonus .cta:hover {
+      background: #f0f0f0;
+    }
+
+    /* FOR WHO */
+
+    .for-who {
+      background: var(--light);
+    }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .who-card {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid #e8eee9;
+    }
+
+    .who-card .icon-box {
+      width: 60px;
+      height: 60px;
+      background: var(--light-green);
+      color: var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin: 0 auto 15px;
+    }
+
+    .who-card h3 {
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .who-card p {
+      color: var(--gray);
+    }
+
+    /* OFFER */
+
+    .offer {
+      background: white;
+    }
+
+    .offer-card {
+      max-width: 650px;
+      margin: auto;
+      border: 2px solid #d9eee1;
+      border-radius: 25px;
+      padding: 45px;
+      text-align: center;
+      box-shadow: 0 15px 45px rgba(0,0,0,.07);
+    }
+
+    .offer-card .tag {
+      display: inline-block;
+      background: var(--yellow);
+      padding: 7px 15px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .offer-card h2 {
+      font-size: 35px;
+      color: var(--dark);
+    }
+
+    .price {
+      font-size: 50px;
+      font-weight: 900;
+      color: var(--green);
+      margin: 15px 0;
+    }
+
+    .offer-card p {
+      color: var(--gray);
+      margin-bottom: 25px;
+    }
+
+    .secure {
+      font-size: 13px;
+      color: #718078;
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* FAQ */
+
+    .faq {
+      background: var(--light);
+    }
+
+    .faq-list {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    details {
+      background: white;
+      margin-bottom: 12px;
+      padding: 20px 25px;
+      border-radius: 12px;
+      border: 1px solid #e4eae6;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--dark);
+    }
+
+    details p {
+      margin-top: 15px;
+      color: var(--gray);
+    }
+
+    /* FINAL CTA */
+
+    .final-cta {
+      text-align: center;
+      background: linear-gradient(135deg,#effcf4,#ffffff);
+    }
+
+    .final-cta h2 {
+      font-size: clamp(28px,5vw,50px);
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .final-cta p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: var(--gray);
+      font-size: 17px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #10231b;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer p {
+      color: #aebbb5;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.2);
+      z-index: 999;
+      transition: transform 0.2s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 800px) {
+
+      .nav a:not(.nav-btn) {
+        display: none;
+      }
+
+      .hero-container,
+      .bonus-container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .hero-card {
+        max-width: 500px;
+        margin: auto;
+      }
+
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .phase-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .who-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bonus-container {
+        text-align: center;
+      }
+
+      .bonus ul {
+        text-align: left;
+        display: inline-block;
+      }
+    }
+
+    @media(max-width: 500px) {
+
+      section {
+        padding: 50px 16px;
+      }
+
+      .hero {
+        padding: 40px 16px 50px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .cta {
+        width: 100%;
+        max-width: 100%;
+        padding: 16px 20px;
+        font-size: 16px;
+      }
+
+      .phase-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .offer-card {
+        padding: 30px 20px;
+      }
+
+      .price {
+        font-size: 42px;
+      }
+
+      .app-box {
+        padding: 25px;
+      }
+      
+      .problem-box {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="nav">
+      <div class="logo"><i class="fa-solid fa-leaf"></i> Desafio 20 Dias</div>
+
+      <div>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#bonus">Bônus</a>
+        <a href="#faq">FAQ</a>
+        <a href="#comprar" class="nav-btn">Quero começar</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-container">
+
+      <div>
+
+        <span class="badge">
+          <i class="fa-solid fa-fire"></i> DESAFIO DE 20 DIAS
+        </span>
+
+        <h1>
+          Mude seus hábitos.<br>
+          <span>Transforme sua rotina.</span>
+        </h1>
+
+        <p>
+          Um guia prático de 20 dias para ajudar você a organizar
+          alimentação, hidratação, movimento, sono e hábitos —
+          sem dietas malucas e sem precisar viver de restrições.
+        </p>
+
+        <a href="#comprar" class="cta">
+          QUERO COMEÇAR O DESAFIO <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <span class="small-text">
+          ✓ Acesso imediato &nbsp; ✓ Guia prático &nbsp; ✓ Bônus exclusivo
+        </span>
+
+      </div>
+
+
+      <div class="hero-card">
+
+        <div class="hero-circle">
+          <i class="fa-solid fa-seedling"></i>
+        </div>
+
+        <h3>
+          20 dias para começar uma nova rotina
+        </h3>
+
+        <p>
+          Pequenas mudanças todos os dias podem ajudar
+          você a construir hábitos mais sustentáveis.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROBLEM -->
+  <section class="problem">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Você começa toda segunda-feira...<br>
+          mas acaba desistindo?
+        </h2>
+
+        <p>
+          O problema pode não ser falta de força de vontade.
+          Muitas vezes, o que falta é um plano simples que
+          realmente caiba na sua rotina.
+        </p>
+
+      </div>
+
+
+      <div class="problem-box">
+
+        <ul class="problem-list">
+          <li><i class="fa-solid fa-xmark"></i> Dietas extremamente restritivas</li>
+          <li><i class="fa-solid fa-xmark"></i> Ficar contando cada caloria</li>
+          <li><i class="fa-solid fa-xmark"></i> Passar fome</li>
+          <li><i class="fa-solid fa-xmark"></i> Tentar mudar tudo de uma vez</li>
+          <li><i class="fa-solid fa-xmark"></i> Desistir depois de alguns dias</li>
+        </ul>
+
+        <strong>
+          O Desafio Emagrecer em 20 Dias propõe uma abordagem
+          baseada em hábitos simples e consistentes.
+        </strong>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BENEFITS -->
+  <section class="benefits">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          O que você vai trabalhar durante os 20 dias?
+        </h2>
+
+        <p>
+          Um passo de cada vez, criando uma rotina mais organizada.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-grid">
+
+        <div class="benefit">
+
+          <div class="icon"><i class="fa-solid fa-utensils"></i></div>
+
+          <h3>
+            Alimentação equilibrada
+          </h3>
+
+          <p>
+            Aprenda a montar refeições mais equilibradas
+            sem transformar sua alimentação em uma obsessão.
+          </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="icon"><i class="fa-solid fa-droplet"></i></div>
+
+          <h3>
+            Hidratação
+          </h3>
+
+          <p>
+            Crie o hábito de beber água ao longo do dia
+            usando estratégias simples e lembretes.
+          </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="icon"><i class="fa-solid fa-person-walking"></i></div>
+
+          <h3>
+            Movimento diário
+          </h3>
+
+          <p>
+            Descubra maneiras de movimentar o corpo mesmo
+            quando você não tem tempo ou acesso a uma academia.
+          </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="icon"><i class="fa-solid fa-moon"></i></div>
+
+          <h3>
+            Sono e recuperação
+          </h3>
+
+          <p>
+            Organize sua rotina de descanso e entenda
+            por que o sono é importante para seus hábitos.
+          </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="icon"><i class="fa-solid fa-brain"></i></div>
+
+          <h3>
+            Mentalidade
+          </h3>
+
+          <p>
+            Trabalhe estratégias para lidar melhor com
+            recaídas e momentos em que a motivação diminui.
+          </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="icon"><i class="fa-solid fa-calendar-check"></i></div>
+
+          <h3>
+            Rotina sustentável
+          </h3>
+
+          <p>
+            O objetivo não é terminar os 20 dias e voltar
+            aos velhos hábitos, mas criar uma rotina que possa continuar.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PHASES -->
+  <section class="phases" id="como-funciona">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          20 dias divididos em 4 fases
+        </h2>
+
+        <p>
+          Você não precisa mudar tudo de uma vez.
+          O desafio conduz você progressivamente.
+        </p>
+
+      </div>
+
+
+      <div class="phase-grid">
+
+        <div class="phase">
+
+          <span class="phase-number">01</span>
+
+          <h3>
+            Dias 1–5
+          </h3>
+
+          <p>
+            Comece organizando sua rotina, hidratação
+            e alimentação.
+          </p>
+
+        </div>
+
+
+        <div class="phase">
+
+          <span class="phase-number">02</span>
+
+          <h3>
+            Dias 6–10
+          </h3>
+
+          <p>
+            Introduza mais movimento e fortaleça
+            os novos hábitos.
+          </p>
+
+        </div>
+
+
+        <div class="phase">
+
+          <span class="phase-number">03</span>
+
+          <h3>
+            Dias 11–15
+          </h3>
+
+          <p>
+            Trabalhe sono, consistência e estratégias
+            para lidar com recaídas.
+          </p>
+
+        </div>
+
+
+        <div class="phase">
+
+          <span class="phase-number">04</span>
+
+          <h3>
+            Dias 16–20
+          </h3>
+
+          <p>
+            Consolide sua nova rotina e prepare-se
+            para continuar depois do desafio.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BONUS -->
+  <section class="bonus" id="bonus">
+
+    <div class="bonus-container">
+
+      <div class="app-box">
+
+        <div class="app-icon">
+          <i class="fa-solid fa-mobile-screen-button"></i>
+        </div>
+
+        <h3>
+          BÔNUS EXCLUSIVO
+        </h3>
+
+        <p>
+          7 dias grátis no aplicativo
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h2>
+          E você ainda recebe 7 dias grátis no nosso app!
+        </h2>
+
+        <p>
+          Para ajudar você a manter o foco durante o desafio,
+          você terá acesso experimental ao aplicativo oficial.
+        </p>
+
+        <ul>
+
+          <li><i class="fa-solid fa-circle-check"></i> Lembretes de água</li>
+
+          <li><i class="fa-solid fa-circle-check"></i> Acompanhamento de hábitos</li>
+
+          <li><i class="fa-solid fa-circle-check"></i> Lembretes de movimento</li>
+
+          <li><i class="fa-solid fa-circle-check"></i> Receitas práticas</li>
+
+          <li><i class="fa-solid fa-circle-check"></i> Organização da rotina</li>
+
+        </ul>
+
+        <a href="#comprar" class="cta">
+          QUERO MEU ACESSO <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOR WHO -->
+  <section class="for-who">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Para quem é o desafio?
+        </h2>
+
+      </div>
+
+
+      <div class="who-grid">
+
+        <div class="who-card">
+
+          <div class="icon-box"><i class="fa-solid fa-house-user"></i></div>
+
+          <h3>
+            Para quem tem rotina corrida
+          </h3>
+
+          <p>
+            Um plano pensado para ser adaptável
+            à vida real.
+          </p>
+
+        </div>
+
+
+        <div class="who-card">
+
+          <div class="icon-box"><i class="fa-solid fa-rotate-right"></i></div>
+
+          <h3>
+            Para quem vive recomeçando
+          </h3>
+
+          <p>
+            Comece novamente com passos menores
+            e mais consistentes.
+          </p>
+
+        </div>
+
+
+        <div class="who-card">
+
+          <div class="icon-box"><i class="fa-solid fa-bullseye"></i></div>
+
+          <h3>
+            Para quem quer criar hábitos
+          </h3>
+
+          <p>
+            Foque no processo e construa uma rotina
+            que possa continuar.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- OFFER -->
+  <section class="offer" id="comprar">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Comece seu desafio hoje
+        </h2>
+
+        <p>
+          Tenha acesso ao material e comece a colocar
+          pequenas mudanças em prática.
+        </p>
+
+      </div>
+
+
+      <div class="offer-card">
+
+        <span class="tag">
+          ACESSO IMEDIATO
+        </span>
+
+        <h2>
+          Desafio Emagrecer em 20 Dias
+        </h2>
+
+        <!-- ALTERE O PREÇO AQUI -->
+        <div class="price">
+          R$ 19,90
+        </div>
+
+        <p>
+          ✓ Guia completo<br>
+          ✓ Plano de 20 dias<br>
+          ✓ 4 fases práticas<br>
+          ✓ Bônus de 7 dias no aplicativo
+        </p>
+
+        <!-- COLOQUE SEU LINK DA KIWIFY AQUI -->
+        <a
+          href="https://SEU-LINK-DA-KIWIFY.com"
+          class="cta"
+          target="_blank"
+        >
+          QUERO COMEÇAR AGORA <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <div class="secure">
+          <i class="fa-solid fa-lock"></i> Compra segura • Acesso digital
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Perguntas frequentes
+        </h2>
+
+      </div>
+
+
+      <div class="faq-list">
+
+        <details>
+
+          <summary>
+            Preciso ir à academia?
+          </summary>
+
+          <p>
+            Não necessariamente. O desafio trabalha também
+            com formas simples de incluir mais movimento
+            na rotina diária.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Preciso fazer uma dieta restritiva?
+          </summary>
+
+          <p>
+            A proposta do desafio é trabalhar hábitos e
+            escolhas alimentares mais equilibradas, evitando
+            a ideia de dietas extremamente restritivas.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            O que recebo depois da compra?
+          </summary>
+
+          <p>
+            Você receberá acesso ao material digital do
+            desafio e às instruções para utilizar o bônus
+            do aplicativo, conforme as condições da oferta.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Posso continuar depois dos 20 dias?
+          </summary>
+
+          <p>
+            Sim. A ideia do desafio é justamente ajudar você
+            a desenvolver hábitos que possam ser mantidos
+            depois do período inicial.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            O desafio garante quantos quilos vou perder?
+          </summary>
+
+          <p>
+            Não. Os resultados variam de pessoa para pessoa.
+            O desafio é focado na construção de hábitos e não
+            promete uma quantidade específica de perda de peso.
+          </p>
+
+        </details>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+
+    <div class="container">
+
+      <h2>
+        Chega de recomeçar toda segunda.
+      </h2>
+
+      <p>
+        Comece com pequenos passos, organize sua rotina
+        e descubra como hábitos consistentes podem fazer
+        parte da sua vida.
+      </p>
+
+      <a href="#comprar" class="cta">
+        QUERO COMEÇAR O DESAFIO <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <strong>
+      <i class="fa-solid fa-leaf"></i> Desafio Emagrecer em 20 Dias
+    </strong>
+
+    <p>
+      Este produto possui finalidade educacional e de
+      orientação geral sobre hábitos e rotina.
+      Não substitui avaliação, diagnóstico ou acompanhamento
+      de profissionais de saúde.
+    </p>
+
+    <p>
+      © 2026 — Todos os direitos reservados.
+    </p>
+
+  </footer>
+
+
+  <!-- WHATSAPP -->
+  <!-- TROQUE 5511999999999 PELO SEU NÚMERO -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/5511999999999?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20Desafio%20Emagrecer%20em%2020%20Dias."
+    target="_blank"
+    aria-label="Falar no WhatsApp"
+  >
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+
+</body>
+</html>
